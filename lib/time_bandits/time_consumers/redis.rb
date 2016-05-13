@@ -10,7 +10,7 @@ module TimeBandits
     class Redis < BaseConsumer
       prefix :redis
       fields :time, :calls
-      format "Redis: %.3f(%d)", :time, :calls
+      format "Redis (%d): %.1fms", :calls, :time
 
       class Subscriber < ActiveSupport::LogSubscriber
         def request(event)
