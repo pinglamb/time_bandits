@@ -81,7 +81,7 @@ module ActionController #:nodoc:
       # patch to log rendering time with more precision
       def log_process_action(payload) #:nodoc:
         messages, view_runtime = [], payload[:view_runtime]
-        messages << ("Views: %.3fms" % view_runtime.to_f) if view_runtime
+        messages << ("Views: %.1fms" % view_runtime.to_f) if view_runtime
         messages
       end
     end
